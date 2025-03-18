@@ -61,8 +61,8 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun scheduleVitalsReminder() {
-        val workRequest = PeriodicWorkRequestBuilder<ReminderWorker>(15, TimeUnit.MINUTES)
-            .setInitialDelay(15, TimeUnit.MINUTES)
+        val workRequest = PeriodicWorkRequestBuilder<ReminderWorker>(5, TimeUnit.HOURS)
+            .setInitialDelay(5, TimeUnit.HOURS)
             .build()
 
         workManager.enqueueUniquePeriodicWork(
